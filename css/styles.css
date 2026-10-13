@@ -1,0 +1,1358 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap");
+
+/* ==========================================================================
+   1. DESIGN TOKENS & EXPERIMENTAL COLOR PALETTE
+      (Pure Crisp White + Deep Purple + Electric Orange + Acid Lime)
+   ========================================================================== */
+:root {
+  --ink: #ffffff; /* Pure Crisp White canvas */
+  --paper: #1b0b2e; /* Deep Purple ink & heavy borders */
+  --orange: #ff4d00; /* Electric Orange primary accent */
+  --lime: #c8ff00; /* Acid Lime secondary highlight */
+  --muted: #4e3b66;
+  --line: #1b0b2e;
+  --line-soft: #e6e3ed;
+  --panel: #ffffff;
+  --panel-2: #ffffff;
+  --white: #ffffff;
+  --soft: #281244;
+}
+
+/* ==========================================================================
+   2. BASE & RESET STYLES
+   ========================================================================== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+  scroll-behavior: auto;
+}
+
+body {
+  overscroll-behavior: none;
+  background-image:
+    linear-gradient(rgba(27, 11, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 11, 46, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+#smooth-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  width: 100%;
+  will-change: transform;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(rgba(27, 11, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 11, 46, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+
+main > :last-child {
+  margin-bottom: 0 !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll-triggered reveal acceleration & marker alignment */
+main section .h-px.w-12 {
+  transform-origin: left center;
+}
+
+#services .group,
+#stack .grid > div,
+#projects-container article,
+#contact .bg-surface-container-low {
+  will-change: transform, opacity;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & UTILITY OVERRIDES
+   ========================================================================== */
+.font-display-xl,
+.font-headline-lg,
+.font-headline-md,
+.font-headline-sm {
+  font-family: "Cormorant Garamond", serif !important;
+  letter-spacing: 0 !important;
+}
+
+.bg-surface,
+.bg-background {
+  background-color: var(--ink) !important;
+}
+
+.bg-surface-container-lowest {
+  background-color: #ffffff !important;
+}
+
+.bg-surface-container-low {
+  background-color: var(--panel-2) !important;
+}
+
+.bg-surface-container,
+.bg-surface-container-high,
+.bg-surface-container-highest {
+  background-color: var(--panel) !important;
+}
+
+.bg-surface-variant {
+  background-color: #ffffff !important;
+}
+
+.text-primary,
+.text-on-surface,
+.text-tertiary {
+  color: var(--paper) !important;
+}
+
+.text-tertiary-fixed-dim {
+  color: var(--orange) !important;
+}
+
+.text-secondary,
+.text-on-surface-variant {
+  color: var(--muted) !important;
+}
+
+.text-outline,
+.text-outline-variant {
+  color: #65507d !important;
+}
+
+.bg-primary,
+.bg-primary-container {
+  background-color: var(--orange) !important;
+}
+
+.text-on-primary,
+.text-on-primary-container {
+  color: var(--white) !important;
+}
+
+.bg-tertiary-fixed-dim {
+  background-color: var(--orange) !important;
+}
+
+.border-outline-variant {
+  border-color: var(--paper) !important;
+}
+
+.rounded,
+.rounded-lg,
+.rounded-xl {
+  border-radius: 2px !important;
+}
+
+section {
+  border-bottom: 2px solid var(--paper);
+}
+
+footer {
+  border-top: 2px solid var(--paper) !important;
+}
+
+/* ==========================================================================
+   4. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 2px solid var(--paper) !important;
+  transition:
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+header.is-scrolled {
+  box-shadow: 0 6px 0 var(--paper);
+}
+
+header .w-8.h-8.rounded-full.bg-primary {
+  border-radius: 2px !important;
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 3.5px solid var(--paper);
+  border-bottom: 3.5px solid var(--paper);
+  background-color: var(--lime) !important;
+}
+
+header .w-8.h-8.rounded-full.bg-primary .text-on-primary {
+  color: var(--paper) !important;
+}
+
+nav a.is-active {
+  color: var(--orange) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.mobile-menu {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: 4.5rem;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: var(--white);
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 5px solid var(--paper);
+  border-bottom: 5px solid var(--paper);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  font:
+    500 0.95rem Geist,
+    sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.is-active {
+  color: var(--paper);
+  background: var(--lime);
+}
+
+.mobile-menu a:after {
+  content: "arrow_outward";
+  font-family: "Material Symbols Outlined";
+  font-size: 18px;
+}
+
+.mobile-menu .mobile-menu-cta {
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.mobile-menu .mobile-menu-cta:after {
+  content: "";
+}
+
+/* ==========================================================================
+   5. HEAVY RIGHT & BOTTOM BORDER BUTTON SYSTEM
+   ========================================================================== */
+header a.bg-primary,
+header button[aria-label="Toggle Navigation Menu"],
+.hero-section a.bg-primary,
+.hero-section a.bg-surface-container,
+#projects-container a[href^="http"]:not(.project-poster),
+#contact a.bg-primary,
+#copy-email-btn,
+.mobile-menu .mobile-menu-cta {
+  background-color: var(--orange) !important;
+  color: var(--white) !important;
+  border-top: 1.5px solid var(--paper) !important;
+  border-left: 1.5px solid var(--paper) !important;
+  border-right: 5px solid var(--paper) !important;
+  border-bottom: 5px solid var(--paper) !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-width 0.15s ease !important;
+}
+
+header button[aria-label="Toggle Navigation Menu"],
+.hero-section a.bg-surface-container,
+#copy-email-btn {
+  background-color: var(--white) !important;
+  color: var(--paper) !important;
+}
+
+#projects-container a[href^="http"]:not(.project-poster) {
+  padding: 0.55rem 1rem;
+  background-color: var(--lime) !important;
+  color: var(--paper) !important;
+}
+
+header a.bg-primary:hover,
+header button[aria-label="Toggle Navigation Menu"]:hover,
+.hero-section a.bg-primary:hover,
+.hero-section a.bg-surface-container:hover,
+#projects-container a[href^="http"]:not(.project-poster):hover,
+#contact a.bg-primary:hover,
+#copy-email-btn:hover,
+.mobile-menu .mobile-menu-cta:hover {
+  background-color: var(--lime) !important;
+  color: var(--paper) !important;
+  transform: translate(2px, 2px) !important;
+}
+
+#contact a.bg-primary:hover .text-on-primary {
+  color: var(--paper) !important;
+}
+
+header a.bg-primary:active,
+.hero-section a.bg-primary:active,
+.hero-section a.bg-surface-container:active,
+#projects-container a[href^="http"]:not(.project-poster):active,
+#contact a.bg-primary:active,
+#copy-email-btn:active {
+  transform: translate(4px, 4px) !important;
+}
+
+/* ==========================================================================
+   6. CARDS, PANELS, BADGES & TAGS — COHESIVE HEAVY BORDER THEME
+   ========================================================================== */
+.bg-surface-container-low,
+.bg-surface-container,
+.bg-surface-container-high,
+.bg-surface-container-highest {
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 5px solid var(--paper);
+  border-bottom: 5px solid var(--paper);
+  box-shadow: none !important;
+}
+
+/* Nested rows inside Stack domains & Hero capability pills */
+#stack .bg-surface-container-low,
+.hero-section span.bg-surface-container,
+#services span.bg-surface-variant\/40,
+#projects-container span.bg-surface-container {
+  border-top: 1px solid var(--paper) !important;
+  border-left: 1px solid var(--paper) !important;
+  border-right: 3px solid var(--paper) !important;
+  border-bottom: 3px solid var(--paper) !important;
+  background-color: var(--white) !important;
+  color: var(--paper) !important;
+}
+
+/* Interactive Service Cards */
+#services .group.bg-surface-container-low {
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease;
+}
+
+#services .group.bg-surface-container-low:hover {
+  background-color: var(--white) !important;
+  transform: translate(-2px, -2px);
+}
+
+#services .group .md\:w-1\/6 .material-symbols-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--lime);
+  color: var(--paper) !important;
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 4px solid var(--paper);
+  border-bottom: 4px solid var(--paper);
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+#services .group:hover .md\:w-1\/6 .material-symbols-outlined {
+  background: var(--orange);
+  color: var(--white) !important;
+  transform: translate(2px, 2px);
+}
+
+/* Selected Work Project Articles — Stacking Card Architecture */
+#projects-container {
+  position: relative;
+}
+
+#projects-container article {
+  position: relative;
+  border-top: 1.5px solid var(--paper) !important;
+  border-left: 1.5px solid var(--paper) !important;
+  border-right: 6px solid var(--paper) !important;
+  border-bottom: 6px solid var(--paper) !important;
+  background-color: var(--white) !important;
+  transform-origin: top center;
+  will-change: transform, opacity;
+  box-shadow: 0 10px 30px rgba(27, 11, 46, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+#projects-container article:not(:first-child) {
+  box-shadow:
+    0 -12px 36px rgba(27, 11, 46, 0.18),
+    0 25px 50px -10px rgba(27, 11, 46, 0.25);
+}
+
+#projects-container img {
+  filter: grayscale(1);
+  transition: filter 0.4s ease;
+}
+
+#projects-container img:hover,
+#projects-container a:focus-visible img {
+  filter: none;
+}
+
+#projects-container .project-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none !important;
+  border-bottom: 1.5px solid var(--paper);
+}
+
+@media (min-width: 1024px) {
+  #projects-container article.lg\:flex-row .project-poster {
+    border-bottom: 0;
+    border-right: 1.5px solid var(--paper);
+  }
+  #projects-container article.lg\:flex-row-reverse .project-poster {
+    border-bottom: 0;
+    border-left: 1.5px solid var(--paper);
+  }
+}
+
+#projects-container .project-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 36rem;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  #projects-container .project-poster img {
+    max-height: 18rem;
+  }
+}
+
+#projects-container .project-poster:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
+/* About Location Frame */
+#about [data-location] {
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 4px solid var(--paper);
+  border-bottom: 4px solid var(--paper);
+  filter: grayscale(1) contrast(1.08);
+}
+
+#about [data-location] span.bg-surface-container-lowest\/80 {
+  background-color: var(--lime) !important;
+  color: var(--paper) !important;
+  border-top: 1px solid var(--paper);
+  border-left: 1px solid var(--paper);
+  border-right: 3px solid var(--paper);
+  border-bottom: 3px solid var(--paper);
+}
+
+/* Contact Channel Boxes */
+#contact .grid.sm\:grid-cols-3 > div {
+  background-color: var(--white);
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--paper);
+  border-left: 1px solid var(--paper);
+  border-right: 3.5px solid var(--paper);
+  border-bottom: 3.5px solid var(--paper);
+}
+
+#copy-email-btn {
+  max-width: 100%;
+  min-width: 0;
+}
+
+#email-btn-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-link {
+  overflow-wrap: anywhere;
+}
+
+/* Section Index Badges (01 / IDENTITY, etc.) */
+section[id] .flex.items-center.gap-space-sm > span.font-code-sm:first-child {
+  background-color: var(--lime);
+  color: var(--paper) !important;
+  padding: 0.2rem 0.6rem;
+  border-top: 1px solid var(--paper);
+  border-left: 1px solid var(--paper);
+  border-right: 3px solid var(--paper);
+  border-bottom: 3px solid var(--paper);
+}
+
+section[id] .flex.items-center.gap-space-sm > span.h-px {
+  height: 2px !important;
+  background-color: var(--paper) !important;
+}
+
+/* ==========================================================================
+   7. STEEP DIAGONAL SPLIT HERO SECTION (WHITE LEFT / DEEP PURPLE RIGHT)
+   ========================================================================== */
+.hero-section {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  align-items: stretch;
+  border-bottom: 2px solid var(--paper);
+  position: relative;
+  background-color: var(--ink) !important;
+  background-image:
+    linear-gradient(rgba(27, 11, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 11, 46, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  max-width: none !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* Steep Diagonal Deep-Purple Right Backdrop on Desktop */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(
+      circle at 74% 46%,
+      rgba(255, 77, 0, 0.22) 0%,
+      rgba(200, 255, 0, 0.08) 28%,
+      transparent 55%
+    ),
+    linear-gradient(rgba(200, 255, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 255, 0, 0.07) 1px, transparent 1px);
+  background-size: 100% 100%, 64px 64px, 64px 64px;
+  clip-path: polygon(58% 0, 100% 0, 100% 100%, 34% 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-section:after {
+  content: "01 / 05";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  color: var(--lime);
+  font:
+    600 11px "JetBrains Mono",
+    monospace;
+  letter-spacing: 0.16em;
+  z-index: 3;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 3rem 1.25rem 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-split {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: stretch;
+  position: relative;
+}
+
+.hero-section .hero-kicker {
+  border-top: 1.5px solid var(--paper) !important;
+  border-left: 1.5px solid var(--paper) !important;
+  border-right: 4px solid var(--paper) !important;
+  border-bottom: 4px solid var(--paper) !important;
+  border-radius: 2px !important;
+  background: var(--lime) !important;
+  width: fit-content;
+}
+
+.hero-section .hero-kicker span {
+  color: var(--paper) !important;
+  font-weight: 600;
+}
+
+.hero-section h1 {
+  font-size: clamp(4.4rem, 8.5vw, 8.25rem) !important;
+  line-height: 0.85 !important;
+  max-width: 8ch;
+  text-wrap: balance;
+}
+
+.hero-section h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--orange);
+  text-shadow: none;
+}
+
+.hero-section .hero-subtitle {
+  max-width: 24rem;
+  border-left: 3px solid var(--orange);
+  padding-left: 1rem;
+  color: var(--soft) !important;
+  font-size: clamp(1.25rem, 1.9vw, 1.65rem) !important;
+  line-height: 1.3 !important;
+}
+
+.hero-section .portrait-frame {
+  width: 100%;
+  margin-inline: auto;
+  overflow: visible;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-section .portrait-frame img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: clamp(24rem, calc(100vh - 6rem), 46rem);
+  object-fit: contain;
+  object-position: bottom center;
+  filter: grayscale(1)
+    drop-shadow(0 -1px 0 rgba(200, 255, 0, 0.35))
+    drop-shadow(0 20px 40px rgba(10, 4, 20, 0.7));
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+.hero-section .portrait-frame:hover img {
+  filter: grayscale(0)
+    drop-shadow(0 -1px 0 rgba(200, 255, 0, 0.5))
+    drop-shadow(0 20px 40px rgba(10, 4, 20, 0.7));
+}
+
+/* ==========================================================================
+   7.5 CROSSED DIAGONAL KINETIC MARQUEE RIBBONS (X-CROSS)
+   ========================================================================== */
+#stack {
+  border-bottom: 0 !important;
+}
+
+.diagonal-ticker-wrap {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding-block: 4rem;
+  margin-block: 0;
+  background: transparent;
+  border: 0;
+  pointer-events: none;
+}
+
+.diagonal-ticker {
+  grid-area: 1 / 1;
+  width: 110%;
+  margin-left: -5%;
+  color: #080808;
+  border-top: 2px solid #080808;
+  border-bottom: 5px solid #080808;
+  padding: 0.7rem 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Primary Foreground Ribbon (Electric Orange, Tilted -3.6deg, Moving Left -> Right) */
+.diagonal-ticker-primary {
+  background-color: var(--orange);
+  transform: rotate(-3.6deg);
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(8, 8, 8, 0.18);
+}
+
+/* Secondary Crossing Ribbon (Acid Lime, Tilted +3.6deg, Moving Right -> Left) */
+.diagonal-ticker-secondary {
+  background-color: var(--lime);
+  transform: rotate(3.6deg);
+  z-index: 1;
+}
+
+.diagonal-ticker-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.diagonal-ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding-right: 1.75rem;
+  font:
+    700 0.82rem "JetBrains Mono",
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #080808;
+  white-space: nowrap;
+}
+
+.diagonal-ticker-group span {
+  color: #080808;
+}
+
+.diagonal-ticker .ticker-sep {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  background-color: var(--lime);
+  color: #080808;
+  border-top: 1px solid #080808;
+  border-left: 1px solid #080808;
+  border-right: 2.5px solid #080808;
+  border-bottom: 2.5px solid #080808;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.diagonal-ticker-secondary .ticker-sep {
+  background-color: var(--orange);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   7.6 ELECTRIC ORANGE CURSOR FOLLOWER (PC ONLY)
+   ========================================================================== */
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 77, 0, 0.78);
+  backdrop-filter: blur(4px) saturate(150%);
+  -webkit-backdrop-filter: blur(4px) saturate(150%);
+  border: 0;
+  box-shadow: none;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height, background-color, opacity;
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.cursor-follower-icon {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cursor-follower.is-visible {
+  opacity: 1;
+}
+
+/* Color shift when gliding over dark / high-accent zones */
+.cursor-follower.is-over-accent {
+  background-color: rgba(200, 255, 0, 0.76);
+  color: #080808;
+}
+
+/* Interactive hover state on links & buttons */
+.cursor-follower.is-hover {
+  width: 68px;
+  height: 68px;
+  background-color: rgba(200, 255, 0, 0.85);
+  color: #080808;
+}
+
+.cursor-follower.is-hover .cursor-follower-icon {
+  transform: rotate(90deg) scale(1.12);
+}
+
+@media (max-width: 1023px), (pointer: coarse), (hover: none), (prefers-reduced-motion: reduce) {
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   7.7 GSAP PRELOADER OVERLAY (UNIFIED STRETCH & DISAPPEAR)
+   ========================================================================== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  background-color: var(--panel);
+  background-image:
+    linear-gradient(rgba(8, 8, 8, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 8, 8, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  border: 0;
+  transform-origin: center center;
+  will-change: transform, border-radius, opacity;
+}
+
+.preloader.is-done {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.preloader-tag {
+  font:
+    600 0.72rem "JetBrains Mono",
+    monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background-color: var(--lime);
+  color: #080808;
+  padding: 0.3rem 0.75rem;
+  border-top: 1.5px solid #080808;
+  border-left: 1.5px solid #080808;
+  border-right: 4px solid #080808;
+  border-bottom: 4px solid #080808;
+}
+
+.preloader-title {
+  display: inline-flex;
+  align-items: baseline;
+  overflow: visible;
+  padding: 0.1em 0.15em;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: clamp(4.5rem, 14vw, 10.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: #080808;
+}
+
+.preloader-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.preloader-dot {
+  color: var(--lime);
+}
+
+.preloader-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: min(18rem, 78vw);
+}
+
+.preloader-progress-track {
+  flex: 1;
+  height: 10px;
+  background: #ffffff;
+  border-top: 1.5px solid #080808;
+  border-left: 1.5px solid #080808;
+  border-right: 3.5px solid #080808;
+  border-bottom: 3.5px solid #080808;
+  overflow: hidden;
+}
+
+.preloader-progress-bar {
+  width: 100%;
+  height: 100%;
+  background: #080808;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.preloader-count {
+  font:
+    700 0.85rem "JetBrains Mono",
+    monospace;
+  color: #080808;
+  min-width: 3.2ch;
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   8. RESPONSIVE & ACCESSIBILITY MEDIA QUERIES
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  #projects-container img,
+  .hero-section .portrait-frame img {
+    transition: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    padding: 3.5rem 2rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    padding: 0 4rem;
+  }
+  .hero-split {
+    grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .hero-left {
+    max-width: 28rem;
+    padding-block: 3.5rem;
+    margin-left: clamp(0rem, 2vw, 2.5rem);
+  }
+  .hero-right {
+    padding-top: 1.5rem;
+    padding-left: clamp(4rem, 9vw, 9rem);
+  }
+  .hero-section:after {
+    right: 2rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-section::before {
+    display: none;
+  }
+  .hero-left {
+    padding-bottom: 1.5rem;
+  }
+  .hero-right {
+    width: calc(100% + 4rem);
+    margin-inline: -2rem;
+    padding: 4.5rem 2rem 0;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 77, 0, 0.22) 0%,
+        transparent 60%
+      ),
+      linear-gradient(rgba(200, 255, 0, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 255, 0, 0.07) 1px, transparent 1px);
+    background-size: 100% 100%, 64px 64px, 64px 64px;
+    clip-path: polygon(0 16%, 100% 0, 100% 100%, 0% 100%);
+  }
+  .hero-section .portrait-frame img {
+    height: clamp(20rem, 62vw, 30rem);
+  }
+  .hero-section:after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: auto;
+  }
+  .hero-section h1 {
+    font-size: clamp(3.75rem, 18vw, 5.4rem) !important;
+  }
+}
+
+/* ==========================================================================
+   9. PINNED DECAYING TRANSITION PROJECT SECTION
+      (Integrated Landing Page Theme: Deep Purple -> Electric Orange)
+   ========================================================================== */
+
+#selected-work {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(200, 255, 0, 0.08) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 15% 85%,
+      rgba(255, 77, 0, 0.09) 0%,
+      transparent 55%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+  border-bottom: 2px solid var(--paper);
+  overflow: hidden;
+  transition: none !important;
+}
+
+.decay-pinned-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Sticky Header (Theme Consistent) ── */
+.decay-sticky-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+  padding: clamp(0.75rem, 1.8vh, 1.15rem) clamp(1.2rem, 4vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  will-change: transform, opacity;
+  pointer-events: auto;
+}
+
+.decay-progress-track {
+  width: 75px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.decay-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: var(--orange);
+}
+
+/* ── Proportional Title & Rotten SVG Distortion Layer ── */
+.decay-title-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  padding: 1.5rem;
+  will-change: opacity, transform;
+}
+
+.massive-decay-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.75rem, 11vw, 9.5rem);
+  font-weight: 700;
+  line-height: 0.86;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-align: center;
+  user-select: none;
+  filter: url(#decay-filter);
+  will-change: transform, filter, opacity, color;
+  transform-origin: center center;
+}
+
+/* ── Projects Arena & Landing Page Native Cards ── */
+.decay-projects-arena {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.lp-project-card {
+  position: absolute;
+  pointer-events: auto;
+  background-color: var(--white);
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 5px solid var(--paper);
+  border-bottom: 5px solid var(--paper);
+  box-shadow: 10px 12px 0px rgba(0, 0, 0, 0.55);
+  border-radius: 2px !important;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: transform, opacity;
+  transform-origin: center center;
+  transition: box-shadow 0.25s ease;
+}
+
+.lp-project-card:hover {
+  z-index: 50 !important;
+  box-shadow: 14px 16px 0px var(--orange);
+}
+
+/* Desktop layout (>= 1024px) */
+@media (min-width: 1024px) {
+  #decay-card-1 {
+    top: clamp(4.2rem, 10vh, 5.5rem);
+    left: clamp(2rem, 6vw, 5.5rem);
+    width: clamp(300px, 34vw, 440px);
+    max-height: calc(100vh - 190px);
+  }
+
+  #decay-card-2 {
+    top: clamp(4.2rem, 10vh, 5.5rem);
+    right: clamp(2rem, 6vw, 5.5rem);
+    width: clamp(300px, 34vw, 440px);
+    max-height: calc(100vh - 190px);
+  }
+
+  #decay-card-3 {
+    bottom: clamp(1rem, 2.5vh, 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(320px, 58vw, 780px);
+    min-height: auto;
+    box-shadow: 8px 10px 0px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* Mobile & Tablet layout (< 1024px) */
+@media (max-width: 1023px) {
+  #decay-card-1,
+  #decay-card-2 {
+    width: min(88vw, 390px);
+    max-height: calc(100vh - 200px);
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+  }
+
+  #decay-card-1 {
+    z-index: 26;
+  }
+
+  #decay-card-2 {
+    z-index: 28;
+  }
+
+  #decay-card-3 {
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(88vw, 390px);
+    min-height: auto;
+    box-shadow: 6px 8px 0px rgba(0, 0, 0, 0.55);
+    z-index: 30;
+  }
+}
+
+.lp-card-poster {
+  position: relative;
+  width: 100%;
+  height: clamp(130px, 16vh, 175px);
+  background: var(--surface-container-lowest, #ffffff);
+  overflow: hidden;
+  border-bottom: 1.5px solid var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.lp-card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 0.35s ease, transform 0.5s ease;
+  display: block;
+}
+
+.lp-project-card:hover .lp-card-poster img {
+  filter: none;
+  transform: scale(1.04);
+}
+
+.lp-poster-badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background-color: var(--paper);
+  color: var(--white);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--paper);
+  box-shadow: 2px 2px 0px rgba(27, 11, 46, 0.4);
+}
+
+.lp-card-content {
+  padding: clamp(0.85rem, 1.4vw, 1.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  background-color: var(--white);
+}
+
+.lp-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  background-color: var(--orange);
+  color: var(--white);
+  border: 1px solid var(--paper);
+  border-right: 3px solid var(--paper);
+  border-bottom: 3px solid var(--paper);
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  border-radius: 2px !important;
+}
+
+.lp-card-cta:hover {
+  background-color: var(--lime);
+  color: var(--paper);
+  transform: translate(1px, 1px);
+}
+
+.lp-project-card--note {
+  border-top: 1.5px solid var(--paper);
+  border-left: 1.5px solid var(--paper);
+  border-right: 4px solid var(--paper);
+  border-bottom: 4px solid var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .massive-decay-title {
+    filter: none !important;
+  }
+  .lp-project-card {
+    transform: none !important;
+    position: relative !important;
+    margin: 1.5rem auto !important;
+  }
+  .decay-pinned-stage {
+    height: auto !important;
+  }
+  .decay-projects-arena {
+    position: relative !important;
+    flex-direction: column !important;
+  }
+}
+
+/* ==========================================================================
+   10. SECTION 05 (CONTACT) & FOOTER RIGID STACKING & OPAQUE BASE
+   ========================================================================== */
+#contact {
+  position: relative;
+  z-index: 20;
+  background-color: var(--ink) !important;
+  width: 100%;
+}
+
+footer {
+  position: relative;
+  z-index: 20;
+  background-color: var(--ink) !important;
+  border-top: 2px solid var(--paper) !important;
+  width: 100%;
+}
+

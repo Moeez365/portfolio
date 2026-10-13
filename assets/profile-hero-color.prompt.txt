@@ -1,0 +1,6 @@
+Tool: Built-in imagegen
+Edit target (image 1): assets/profile-hero.png
+Color reference (image 2): assets/profile.jpeg
+Output: assets/profile-hero-color.png
+
+Colorize image 1 using image 2 as the color reference. Preserve image 1's identity, face, expression, hair, glasses, clothing, framing, proportions, texture, lighting, and soft white/light-gray background exactly. Restore the natural skin, hair, and clothing colors from image 2. Do not add text, objects, or retouching. Return one photorealistic color portrait at the same aspect ratio.

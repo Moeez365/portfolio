@@ -1,0 +1,1567 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>Moeez — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Full-Stack Developer based in Sargodha, Pakistan — building fast, scalable web applications and custom e-commerce stores."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Space+Grotesk:wght@100..900&family=Syne:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "gsap": "./node_modules/gsap/index.js",
+          "gsap/ScrollTrigger": "./node_modules/gsap/ScrollTrigger.js",
+          "gsap/ScrollSmoother": "./node_modules/gsap/ScrollSmoother.js",
+          "gsap/ScrollToPlugin": "./node_modules/gsap/ScrollToPlugin.js"
+        }
+      }
+    </script>
+    <script src="node_modules/gsap/dist/gsap.min.js" defer></script>
+    <script src="node_modules/gsap/dist/ScrollTrigger.min.js" defer></script>
+    <script src="node_modules/gsap/dist/ScrollSmoother.min.js" defer></script>
+    <script src="node_modules/gsap/dist/ScrollToPlugin.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"
+  >
+    <!-- GSAP PRELOADER OVERLAY -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+      <div class="preloader-content">
+        <div class="preloader-tag">// PORTFOLIO · SARGODHA, PK</div>
+        <div class="preloader-title" aria-label="MOEEZ.">
+          <span class="preloader-char">M</span>
+          <span class="preloader-char">O</span>
+          <span class="preloader-char">E</span>
+          <span class="preloader-char">E</span>
+          <span class="preloader-char">Z</span>
+          <span class="preloader-char preloader-dot">.</span>
+        </div>
+        <div class="preloader-progress-wrap">
+          <div class="preloader-progress-track">
+            <div id="preloader-bar" class="preloader-progress-bar"></div>
+          </div>
+          <span id="preloader-count" class="preloader-count">00%</span>
+        </div>
+      </div>
+    </div>
+
+    <header
+      class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30"
+    >
+      <div
+        class="h-16 max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between"
+      >
+        <div class="flex items-center gap-space-md">
+          <a
+            class="flex items-center gap-space-sm group"
+            data-path="home"
+            href="#"
+            ><span
+              class="font-headline-sm text-headline-sm text-primary tracking-tight"
+              >MOEEZ</span
+            >
+            <div
+              class="hidden sm:flex items-center gap-1.5 pl-space-sm border-l border-outline-variant/40"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"
+              ></span
+              ><span
+                class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider"
+                >[ dev / sargodha, pk ]</span
+              >
+            </div></a
+          >
+        </div>
+        <nav
+          class="hidden md:flex items-center gap-space-lg"
+          data-active-classes="bg-primary-container text-on-primary-container rounded-lg"
+        >
+          <a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+            data-path="about"
+            href="#about"
+            >About</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+            data-path="services"
+            href="#services"
+            >Services</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+            data-path="stack"
+            href="#stack"
+            >Stack</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+            data-path="selected-work"
+            href="#selected-work"
+            >Selected Work</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+            data-path="contact"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-md">
+          <a
+            class="hidden sm:inline-flex items-center justify-center h-9 px-space-md font-body-sm text-body-sm bg-primary text-on-primary font-medium rounded hover:bg-primary-fixed transition-colors duration-150 shadow-sm"
+            href="https://wa.me/923083811132"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Hire Me</a
+          ><button
+            aria-label="Toggle Navigation Menu"
+            class="md:hidden inline-flex items-center justify-center p-2 text-on-surface-variant hover:text-primary focus:outline-none"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[24px]">menu</span>
+          </button>
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]">
+          <div class="w-full">
+            <!-- HERO SECTION (STEEP DIAGONAL WHITE / BLACK SPLIT) -->
+            <section class="hero-section relative w-full">
+          <div class="hero-inner">
+            <div class="hero-split">
+              <!-- LEFT SIDE (WHITE ZONE): Minimal Text & CTAs -->
+              <div class="hero-left">
+                <div
+                  class="hero-kicker inline-flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"
+                  ></span>
+                  <span
+                    class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider"
+                    >// FULL-STACK DEVELOPER</span
+                  >
+                </div>
+
+                <div class="space-y-space-md">
+                  <h1
+                    class="font-display-xl text-display-xl-mobile md:text-display-xl text-primary font-medium tracking-tighter leading-none"
+                  >
+                    Hi, I'm <em>Moeez.</em>
+                  </h1>
+                  <p
+                    class="hero-subtitle font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary font-normal tracking-tight"
+                  >
+                    Building fast, scalable web apps and custom e-commerce
+                    stores.
+                  </p>
+                </div>
+
+                <!-- Actions -->
+                <div
+                  class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs"
+                >
+                  <a
+                    class="inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 bg-primary text-on-primary font-body-md text-body-md font-medium rounded hover:bg-primary-fixed transition-colors shadow-sm"
+                    href="https://wa.me/923083811132?text=Hi%20Moeez,%20I'd%20like%20to%20discuss%20a%20project"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span>Hire Me</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >arrow_outward</span
+                    >
+                  </a>
+                  <a
+                    class="inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-colors rounded"
+                    href="#selected-work"
+                  >
+                    <span>Selected Work</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >south</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <!-- RIGHT SIDE (DIAGONAL BLACK ZONE): Transparent Cutout Portrait -->
+              <div class="hero-right">
+                <div class="portrait-frame">
+                  <img
+                    alt="Portrait of Moeez"
+                    src="assets/profile-hero-nobg.png"
+                    width="1175"
+                    height="1215"
+                    fetchpriority="high"
+                    decoding="async"
+                    onerror="
+                      this.onerror = null;
+                      this.src = 'assets/profile-hero-color.png';
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 01: IDENTITY / ABOUT -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-3xl"
+          id="about"
+        >
+          <div
+            class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin"
+          >
+            <!-- Section Marker -->
+            <div class="flex items-center gap-space-sm pb-space-lg">
+              <span
+                class="font-code-sm text-code-sm text-tertiary-fixed-dim uppercase tracking-wider font-semibold"
+                >01 / IDENTITY</span
+              >
+              <span class="h-px w-12 bg-surface-variant"></span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl">
+              <!-- Left: Editorial Narrative -->
+              <div class="lg:col-span-7 space-y-space-md">
+                <h2
+                  class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight"
+                >
+                  Grounded in Sargodha. Building for the global web.
+                </h2>
+                <div
+                  class="space-y-space-md font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                >
+                  <p>
+                    I am a developer based in Sargodha, Pakistan, currently
+                    learning and refining my craft as a Full-Stack Engineer. My
+                    journey started out of a genuine curiosity for how complex
+                    systems connect behind the screen. Rather than chasing
+                    shortcuts, I spend my hours breaking down technical
+                    problems, writing clean modular code, and understanding the
+                    engineering that powers modern web applications.
+                  </p>
+                  <!-- <p>
+                    My ambition is focused and deliberate: to build scalable,
+                    resilient digital products and steadily grow into working
+                    with world-class engineering teams at major technology
+                    companies. Every project is an exercise in structural
+                    discipline, performance profiling, and pixel-exact
+                    execution.
+                  </p> -->
+                </div>
+                <div class="pt-space-sm flex items-center gap-space-md">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]"
+                      >verified</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface font-medium"
+                      >Standards-Compliant Architecture</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]"
+                      >bolt</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface font-medium"
+                      >Zero-Bloat Performance</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Right: Technical Specification Panel -->
+              <div
+                class="lg:col-span-5 flex flex-col justify-between bg-surface-container p-space-lg rounded space-y-space-md"
+              >
+                <div class="flex items-center justify-between pb-space-sm">
+                  <span
+                    class="font-label-caps text-label-caps text-outline uppercase tracking-widest"
+                    >// SPECIFICATION DATA SHEET</span
+                  >
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim"
+                    >REV 2025.1</span
+                  >
+                </div>
+                <div
+                  class="space-y-space-md divide-y divide-surface-variant/40 font-body-sm text-body-sm"
+                >
+                  <div
+                    class="pt-space-xs flex justify-between items-start gap-space-sm"
+                  >
+                    <span class="text-on-surface-variant">Location:</span>
+                    <span
+                      class="text-right text-primary font-medium font-code-sm text-code-sm"
+                      >Sargodha, Punjab, PK (UTC+5)</span
+                    >
+                  </div>
+                  <div
+                    class="pt-space-xs flex justify-between items-start gap-space-sm"
+                  >
+                    <span class="text-on-surface-variant">Discipline:</span>
+                    <span class="text-right text-primary font-medium"
+                      >Full-Stack Web Engineering</span
+                    >
+                  </div>
+                  <div
+                    class="pt-space-xs flex justify-between items-start gap-space-sm"
+                  >
+                    <span class="text-on-surface-variant"
+                      >Core Philosophy:</span
+                    >
+                    <span class="text-right text-primary font-medium italic"
+                      >“Write code humans can read and machines can
+                      optimize.”</span
+                    >
+                  </div>
+                  <div
+                    class="pt-space-xs flex justify-between items-start gap-space-sm"
+                  >
+                    <span class="text-on-surface-variant"
+                      >Target Milestone:</span
+                    >
+                    <span class="text-right text-tertiary-fixed-dim font-medium"
+                      >Global Product-First Engineering Teams</span
+                    >
+                  </div>
+                  <div
+                    class="pt-space-xs flex justify-between items-start gap-space-sm"
+                  >
+                    <span class="text-on-surface-variant"
+                      >Working Modality:</span
+                    >
+                    <span class="text-right text-primary font-medium"
+                      >Async Autonomous / Full Remote</span
+                    >
+                  </div>
+                </div>
+                <!-- Location Indicator Visual -->
+                <div class="pt-space-md">
+                  <div
+                    class="w-full h-36 bg-cover bg-center rounded relative overflow-hidden"
+                    data-location="Sargodha, Pakistan"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAzXemwSmzdVq9H0nQcjkbqfTvMZOUZjifkdwyjOA_58aP8FvGXvYBABD0NyCtS5UiEv3JlACNkFGfuwd6uEPQ9Km3A5SdY3ZszymtSB4qHsMgHwkP-nqCyz3fIVyxMO3-AOPfeIyTuq7cTdnufBY9__8UHJaY-lERf5GrAlRhvQ5x7lAUJTuAMmDDgAE7iaNeday65NNcAJSFeCSJDeRpisfOhq_Rjnk-kQA-NymxAN1q1U_qyKhBXYQ&quot;);
+                    "
+                  >
+                    <div
+                      class="absolute inset-0 bg-surface/60 backdrop-blur-xs flex items-end p-space-sm"
+                    >
+                      <span
+                        class="font-code-sm text-code-sm text-primary flex items-center gap-1.5 bg-surface-container-lowest/80 px-2 py-1 rounded"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim"
+                          >location_on</span
+                        >
+                        32.0836° N, 72.6711° E · Sargodha PK
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 02: CAPABILITIES / SERVICES -->
+        <section class="w-full py-space-3xl" id="services">
+          <div
+            class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin space-y-space-2xl"
+          >
+            <!-- Section Marker -->
+            <div
+              class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm"
+            >
+              <div class="space-y-space-xs">
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim uppercase tracking-wider font-semibold"
+                    >02 / CAPABILITIES</span
+                  >
+                  <span class="h-px w-12 bg-surface-variant"></span>
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight"
+                >
+                  Services engineered with purpose and performance.
+                </h2>
+              </div>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-sm"
+              >
+                Deliberate solutions tailored to business viability, conversion,
+                and effortless scalability.
+              </p>
+            </div>
+            <!-- Minimal Tabular Layout -->
+            <div class="space-y-space-sm">
+              <!-- Service 01 -->
+              <div
+                class="group bg-surface-container-low hover:bg-surface-container transition-colors rounded p-space-lg flex flex-col md:flex-row justify-between gap-space-md"
+              >
+                <div class="flex items-start gap-space-md md:w-1/3">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim pt-1 font-semibold"
+                    >01 //</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed-dim transition-colors"
+                    >
+                      Full-Stack Web Development
+                    </h3>
+                    <div
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider pt-1"
+                    >
+                      Custom Dynamic Architectures
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 space-y-space-sm">
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Building complete, end-to-end web applications with modern
+                    frontend and backend architectures, resilient RESTful APIs,
+                    and seamless database models designed for high query
+                    throughput.
+                  </p>
+                  <div class="flex flex-wrap gap-2 pt-space-xs">
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Component Modular</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >REST APIs</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Secure Auth</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Scalable DB</span
+                    >
+                  </div>
+                </div>
+                <div class="hidden md:flex items-center justify-end md:w-1/6">
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[24px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Service 02 -->
+              <div
+                class="group bg-surface-container-low hover:bg-surface-container transition-colors rounded p-space-lg flex flex-col md:flex-row justify-between gap-space-md"
+              >
+                <div class="flex items-start gap-space-md md:w-1/3">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim pt-1 font-semibold"
+                    >02 //</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed-dim transition-colors"
+                    >
+                      Shopify Development
+                    </h3>
+                    <div
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider pt-1"
+                    >
+                      Bespoke Liquid Stores
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 space-y-space-sm">
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Crafting custom, high-converting Liquid themes, seamless
+                    application integrations, and tailor-made e-commerce
+                    experiences uniquely designed around brand identity and
+                    checkout efficiency.
+                  </p>
+                  <div class="flex flex-wrap gap-2 pt-space-xs">
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Custom Liquid</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Conversion Focused</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >App Config</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Speed Optimized</span
+                    >
+                  </div>
+                </div>
+                <div class="hidden md:flex items-center justify-end md:w-1/6">
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[24px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Service 03 -->
+              <div
+                class="group bg-surface-container-low hover:bg-surface-container transition-colors rounded p-space-lg flex flex-col md:flex-row justify-between gap-space-md"
+              >
+                <div class="flex items-start gap-space-md md:w-1/3">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim pt-1 font-semibold"
+                    >03 //</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed-dim transition-colors"
+                    >
+                      WordPress Development
+                    </h3>
+                    <div
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider pt-1"
+                    >
+                      Clean & Headless CMS
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 space-y-space-sm">
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Engineering custom responsive themes, headless CMS setups,
+                    and lean editorial architectures without bloated plugins or
+                    unnecessary dependencies.
+                  </p>
+                  <div class="flex flex-wrap gap-2 pt-space-xs">
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Zero-Plugin Bloat</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Custom PHP</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Editorial Ease</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Strict Security</span
+                    >
+                  </div>
+                </div>
+                <div class="hidden md:flex items-center justify-end md:w-1/6">
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[24px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Service 04 -->
+              <div
+                class="group bg-surface-container-low hover:bg-surface-container transition-colors rounded p-space-lg flex flex-col md:flex-row justify-between gap-space-md"
+              >
+                <div class="flex items-start gap-space-md md:w-1/3">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim pt-1 font-semibold"
+                    >04 //</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed-dim transition-colors"
+                    >
+                      E-commerce Websites
+                    </h3>
+                    <div
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider pt-1"
+                    >
+                      Storefront Engineering
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 space-y-space-sm">
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Architecting modern digital storefronts focused on
+                    frictionless checkout funnels, lightning-fast load times,
+                    and conversion psychology engineered to maximize cart value.
+                  </p>
+                  <div class="flex flex-wrap gap-2 pt-space-xs">
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Frictionless Checkout</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Mobile-First UI</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Payment Gateways</span
+                    >
+                  </div>
+                </div>
+                <div class="hidden md:flex items-center justify-end md:w-1/6">
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[24px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Service 05 -->
+              <div
+                class="group bg-surface-container-low hover:bg-surface-container transition-colors rounded p-space-lg flex flex-col md:flex-row justify-between gap-space-md"
+              >
+                <div class="flex items-start gap-space-md md:w-1/3">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim pt-1 font-semibold"
+                    >05 //</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed-dim transition-colors"
+                    >
+                      Website Redesign
+                    </h3>
+                    <div
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider pt-1"
+                    >
+                      Modernization Audits
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-1/2 space-y-space-sm">
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Auditing, refactoring, and re-engineering outdated web
+                    presences into sharp, contemporary, and high-performance
+                    digital platforms that command market credibility.
+                  </p>
+                  <div class="flex flex-wrap gap-2 pt-space-xs">
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >95+ Lighthouse</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >Modern Aesthetics</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-outline-variant bg-surface-variant/40 px-2 py-0.5 rounded"
+                      >SEO Preserved</span
+                    >
+                  </div>
+                </div>
+                <div class="hidden md:flex items-center justify-end md:w-1/6">
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[24px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 03: ARSENAL / SKILLS -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-3xl"
+          id="stack"
+        >
+          <div
+            class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin space-y-space-2xl"
+          >
+            <!-- Section Marker -->
+            <div class="space-y-space-xs">
+              <div class="flex items-center gap-space-sm">
+                <span
+                  class="font-code-sm text-code-sm text-tertiary-fixed-dim uppercase tracking-wider font-semibold"
+                  >03 / ARSENAL</span
+                >
+                <span class="h-px w-12 bg-surface-variant"></span>
+              </div>
+              <h2
+                class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight"
+              >
+                The modern stack I use to build robust software.
+              </h2>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-lg"
+              >
+                No vanity bars or arbitrary metrics. Only production-tested
+                technologies leveraged for speed, security, and developer
+                clarity.
+              </p>
+            </div>
+            <!-- Domain Matrix Grid -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
+            >
+              <!-- Category: Frontend -->
+              <div
+                class="bg-surface-container p-space-md rounded space-y-space-md flex flex-col justify-between"
+              >
+                <div class="space-y-space-sm">
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider"
+                      >// DOMAIN 01</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]"
+                      >terminal</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    Frontend
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Responsive, accessible, and reactive user interfaces.
+                  </p>
+                </div>
+                <div class="space-y-2 pt-space-xs">
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >HTML5 & CSS3</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Layout & Flex</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >JavaScript (ES6+)</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Modern Core</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >React.js</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-tertiary-fixed-dim"
+                      >Component State</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Tailwind CSS</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Design Tokens</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Category: Backend -->
+              <div
+                class="bg-surface-container p-space-md rounded space-y-space-md flex flex-col justify-between"
+              >
+                <div class="space-y-space-sm">
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider"
+                      >// DOMAIN 02</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]"
+                      >dns</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    Backend
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Performant event-driven servers and relational structures.
+                  </p>
+                </div>
+                <div class="space-y-2 pt-space-xs">
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Node.js</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Async Runtime</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Express.js</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-tertiary-fixed-dim"
+                      >Routing & APIs</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >MongoDB</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Document Store</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Mongoose ORM</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Schema Validation</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Category: Platforms -->
+              <div
+                class="bg-surface-container p-space-md rounded space-y-space-md flex flex-col justify-between"
+              >
+                <div class="space-y-space-sm">
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider"
+                      >// DOMAIN 03</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]"
+                      >storefront</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    Platforms
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Marketplace engines tailored to brand commerce.
+                  </p>
+                </div>
+                <div class="space-y-2 pt-space-xs">
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Shopify / Liquid</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-tertiary-fixed-dim"
+                      >Custom Themes</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >WordPress</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Headless & Custom</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >WooCommerce</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Payment Flows</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Shopify Apps</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Integration</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Category: Ecosystem & Tools -->
+              <div
+                class="bg-surface-container p-space-md rounded space-y-space-md flex flex-col justify-between"
+              >
+                <div class="space-y-space-sm">
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-label-caps text-label-caps uppercase text-outline tracking-wider"
+                      >// DOMAIN 04</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]"
+                      >build</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    Ecosystem
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Tooling pipeline ensuring CI/CD velocity.
+                  </p>
+                </div>
+                <div class="space-y-2 pt-space-xs">
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Git & GitHub</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Version Control</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Postman</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >API Validation</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Cloudinary</span
+                    >
+                    <span
+                      class="font-code-sm text-code-sm text-tertiary-fixed-dim"
+                      >Asset CDN</span
+                    >
+                  </div>
+                  <div
+                    class="p-2 bg-surface-container-low rounded flex items-center justify-between"
+                  >
+                    <span class="font-code-sm text-code-sm text-on-surface"
+                      >Vercel Deploy</span
+                    >
+                    <span class="font-code-sm text-code-sm text-outline"
+                      >Edge Pipeline</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CROSSED DIAGONAL KINETIC MARQUEE STAGE (BETWEEN ARSENAL & SELECTED WORK) -->
+        <div
+          class="diagonal-ticker-wrap"
+          aria-label="Core engineering capabilities"
+        >
+          <!-- Ribbon 2 (Crossing Opposite: Right -> Left) -->
+          <div
+            class="diagonal-ticker diagonal-ticker-secondary"
+            aria-hidden="true"
+          >
+            <div
+              class="diagonal-ticker-track"
+              id="diagonal-ticker-track-reverse"
+            >
+              <div class="diagonal-ticker-group">
+                <span>CLEAN MODULAR CODE</span>
+                <span class="ticker-sep">✦</span>
+                <span>ZERO-BLOAT PERFORMANCE</span>
+                <span class="ticker-sep">✦</span>
+                <span>95+ LIGHTHOUSE AUDITS</span>
+                <span class="ticker-sep">✦</span>
+                <span>RESTFUL API ENGINEERING</span>
+                <span class="ticker-sep">✦</span>
+                <span>MONGODB &amp; EXPRESS.JS</span>
+                <span class="ticker-sep">✦</span>
+                <span>BESPOKE STOREFRONTS</span>
+                <span class="ticker-sep">✦</span>
+                <span>SARGODHA, PK · UTC+5</span>
+                <span class="ticker-sep">✦</span>
+              </div>
+              <div class="diagonal-ticker-group">
+                <span>CLEAN MODULAR CODE</span>
+                <span class="ticker-sep">✦</span>
+                <span>ZERO-BLOAT PERFORMANCE</span>
+                <span class="ticker-sep">✦</span>
+                <span>95+ LIGHTHOUSE AUDITS</span>
+                <span class="ticker-sep">✦</span>
+                <span>RESTFUL API ENGINEERING</span>
+                <span class="ticker-sep">✦</span>
+                <span>MONGODB &amp; EXPRESS.JS</span>
+                <span class="ticker-sep">✦</span>
+                <span>BESPOKE STOREFRONTS</span>
+                <span class="ticker-sep">✦</span>
+                <span>SARGODHA, PK · UTC+5</span>
+                <span class="ticker-sep">✦</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ribbon 1 (Primary Foreground: Left -> Right) -->
+          <div class="diagonal-ticker diagonal-ticker-primary">
+            <div class="diagonal-ticker-track" id="diagonal-ticker-track">
+              <div class="diagonal-ticker-group">
+                <span>FULL-STACK ARCHITECTURE</span>
+                <span class="ticker-sep">✦</span>
+                <span>CUSTOM SHOPIFY &amp; LIQUID</span>
+                <span class="ticker-sep">✦</span>
+                <span>SCALABLE WEB APPS</span>
+                <span class="ticker-sep">✦</span>
+                <span>HIGH-CONVERTING E-COMMERCE</span>
+                <span class="ticker-sep">✦</span>
+                <span>REACT &amp; NODE.JS SYSTEMS</span>
+                <span class="ticker-sep">✦</span>
+                <span>HEADLESS WORDPRESS</span>
+                <span class="ticker-sep">✦</span>
+                <span>AVAILABLE FOR SELECT PROJECTS</span>
+                <span class="ticker-sep">✦</span>
+              </div>
+              <div class="diagonal-ticker-group" aria-hidden="true">
+                <span>FULL-STACK ARCHITECTURE</span>
+                <span class="ticker-sep">✦</span>
+                <span>CUSTOM SHOPIFY &amp; LIQUID</span>
+                <span class="ticker-sep">✦</span>
+                <span>SCALABLE WEB APPS</span>
+                <span class="ticker-sep">✦</span>
+                <span>HIGH-CONVERTING E-COMMERCE</span>
+                <span class="ticker-sep">✦</span>
+                <span>REACT &amp; NODE.JS SYSTEMS</span>
+                <span class="ticker-sep">✦</span>
+                <span>HEADLESS WORDPRESS</span>
+                <span class="ticker-sep">✦</span>
+                <span>AVAILABLE FOR SELECT PROJECTS</span>
+                <span class="ticker-sep">✦</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 04: SELECTED WORK / DECAYING SCROLL TRANSITION -->
+        <section class="w-full relative overflow-hidden" id="selected-work">
+          <!-- Invisible SVG Distortion Filters (<feTurbulence> + <feDisplacementMap>) -->
+          <svg class="svg-decay-filter-defs" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;">
+            <defs>
+              <filter id="decay-filter" x="-25%" y="-25%" width="150%" height="150%" filterUnits="userSpaceOnUse">
+                <feTurbulence
+                  id="decay-turbulence"
+                  type="fractalNoise"
+                  baseFrequency="0.001 0.001"
+                  numOctaves="4"
+                  result="rawNoise"
+                />
+                <feDisplacementMap
+                  id="decay-displacement"
+                  in="SourceGraphic"
+                  in2="rawNoise"
+                  scale="0"
+                  xChannelSelector="R"
+                  yChannelSelector="G"
+                  result="distortedText"
+                />
+                <feGaussianBlur
+                  id="decay-blur"
+                  in="distortedText"
+                  stdDeviation="0"
+                  result="blurredMelt"
+                />
+                <feMerge>
+                  <feMergeNode in="blurredMelt" />
+                </feMerge>
+              </filter>
+            </defs>
+          </svg>
+
+          <!-- Pinned Master Stage (Locked during scrub) -->
+          <div class="decay-pinned-stage" id="selected-work-stage">
+
+            <!-- Sticky Section Header Bar (Deep Purple Theme) -->
+            <div class="decay-sticky-header" id="decay-sticky-header">
+              <div class="flex items-center gap-space-sm">
+                <span class="font-code-sm text-code-sm text-paper bg-lime px-2.5 py-1 border border-paper font-bold tracking-wider uppercase">04 / WORK</span>
+                <span class="h-0.5 w-10 bg-white/40 hidden sm:inline-block"></span>
+                <h3 class="font-headline-md text-headline-md text-white tracking-tight font-bold hidden md:inline-block">Selected Projects.</h3>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="decay-progress-track">
+                  <div class="decay-progress-bar" id="decay-telemetry-bar"></div>
+                </div>
+                <div class="font-code-sm text-code-sm text-paper bg-white px-2.5 py-0.5 border border-paper font-bold">
+                  <span id="decay-counter-active">01</span> / 02
+                </div>
+              </div>
+            </div>
+
+            <!-- ── PHASE 1 & 2: MASSIVE TEXT & ROTTEN DISTORTION LAYER ── -->
+            <div class="decay-title-layer" id="decay-title-layer">
+              <div class="flex items-center gap-space-sm mb-3">
+                <span class="font-code-sm text-code-sm text-paper bg-lime px-2.5 py-1 border border-paper font-bold tracking-wider uppercase">04 / WORK</span>
+                <span class="h-0.5 w-10 bg-white/40"></span>
+                <span class="font-code-sm text-code-sm text-white/75 tracking-widest uppercase font-semibold">SELECTED ARCHIVE</span>
+              </div>
+
+              <h2 class="massive-decay-title" id="projects-decay-title">
+                PROJECTS
+              </h2>
+
+              <div class="font-code-sm text-code-sm text-white/60 tracking-widest mt-4 uppercase flex items-center gap-3">
+                <span>02 FEATURED CASE STUDIES</span>
+                <span class="text-white/30">——</span>
+                <span>SCROLL TO EXPLORE</span>
+              </div>
+            </div>
+
+            <!-- ── PHASE 3: LANDING PAGE PROJECT CARDS ARENA ── -->
+            <div class="decay-projects-arena" id="decay-projects-arena">
+
+              <!-- CARD 01: Leads Forest (Slamming from Top-Left with Elastic Overshoot) -->
+              <article class="lp-project-card" id="decay-card-1">
+                <a
+                  class="lp-card-poster"
+                  href="https://leadsforest.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit the Leads Forest website (opens in a new tab)"
+                >
+                  <img
+                    alt="Leads Forest website launch featuring its lead-generation agency homepage"
+                    src="assets/image.png"
+                    width="604"
+                    height="804"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="lp-poster-badge">
+                    <span>CLIENT WEBSITE</span>
+                    <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                  </div>
+                </a>
+                <div class="lp-card-content">
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-caps text-label-caps text-outline uppercase tracking-wider font-bold">PROJECT 01</span>
+                      <span class="font-code-sm text-code-sm text-on-surface-variant font-medium">Agency Platform</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary font-bold">Leads Forest</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-2">
+                      A lead-generation agency website with a bold teal-and-lime identity, oversized headlines, and collaborative team imagery.
+                    </p>
+                  </div>
+                  <div class="space-y-space-xs pt-1.5">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="font-code-sm text-code-sm text-outline-variant bg-surface-container px-2 py-0.5 rounded border border-paper/10">Web Design</span>
+                      <span class="font-code-sm text-code-sm text-outline-variant bg-surface-container px-2 py-0.5 rounded border border-paper/10">Lead Gen</span>
+                      <span class="font-code-sm text-code-sm text-outline-variant bg-surface-container px-2 py-0.5 rounded border border-paper/10">Business</span>
+                    </div>
+                    <div class="pt-1.5">
+                      <a
+                        class="lp-card-cta"
+                        href="https://leadsforest.com"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span>Live Preview</span>
+                        <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 02: Drimbble (Swinging in from Right at Skew Angle) -->
+              <article class="lp-project-card" id="decay-card-2">
+                <a
+                  class="lp-card-poster"
+                  href="https://drimbble.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit the Drimbble website (opens in a new tab)"
+                >
+                  <img
+                    alt="Drimbble luxury abaya online store launch"
+                    src="assets/image2.png"
+                    width="821"
+                    height="845"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="lp-poster-badge">
+                    <span>ONLINE STORE</span>
+                    <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                  </div>
+                </a>
+                <div class="lp-card-content">
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-caps text-label-caps text-outline uppercase tracking-wider font-bold">PROJECT 02</span>
+                      <span class="font-code-sm text-code-sm text-on-surface-variant font-medium">Luxury Store</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary font-bold">Drimbble</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-2">
+                      A luxury abaya storefront that puts the collection first through editorial fashion photography, a neutral palette, and understated typography with friction-free cart controls.
+                    </p>
+                  </div>
+                  <div class="space-y-space-xs pt-1.5">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="font-code-sm text-code-sm text-outline-variant bg-surface-container px-2 py-0.5 rounded border border-paper/10">E-commerce</span>
+                      <span class="font-code-sm text-code-sm text-outline-variant bg-surface-container px-2 py-0.5 rounded border border-paper/10">Fashion</span>
+                      <span class="font-code-sm text-code-sm text-outline-variant bg-surface-container px-2 py-0.5 rounded border border-paper/10">Web Design</span>
+                    </div>
+                    <div class="pt-1.5">
+                      <a
+                        class="lp-card-cta"
+                        href="https://drimbble.com"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span>Live Preview</span>
+                        <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 03: Personal Projects & Lab Note (Rising from Bottom) -->
+              <article class="lp-project-card lp-project-card--note" id="decay-card-3">
+                <div class="lp-card-content flex flex-col md:flex-row md:items-center justify-between gap-3 p-3.5 sm:px-5 sm:py-3">
+                  <div class="space-y-0.5">
+                    <div class="flex items-center gap-2">
+                      <span class="font-label-caps text-[0.7rem] text-white bg-paper px-2 py-0.5 font-bold uppercase tracking-wider">ARCHIVE // LAB</span>
+                      <span class="font-code-sm text-code-sm text-paper font-semibold">Personal Projects (In Progress)</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug line-clamp-1 md:line-clamp-none max-w-xl">
+                      I'm resolving a few issues and optimizing experimental full-stack builds, so they aren't available to showcase quite yet.
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 shrink-0 pt-1 md:pt-0">
+                    <span class="font-code-sm text-code-sm text-outline hidden lg:inline">Updates:</span>
+                    <a
+                      class="font-code-sm text-code-sm text-paper bg-lime hover:bg-white px-3 py-1 border border-paper transition-colors inline-flex items-center gap-1 font-bold"
+                      href="https://www.instagram.com/moeez.codes/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span>@moeez.codes</span>
+                      <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SECTION 05: CONTACT / CTA TERMINAL -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-3xl"
+          id="contact"
+        >
+          <div
+            class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin"
+          >
+            <div
+              class="bg-surface-container-low rounded p-space-xl md:p-space-2xl relative overflow-hidden"
+            >
+              <div class="max-w-3xl space-y-space-lg relative z-10">
+                <!-- Section Tag -->
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary-fixed-dim uppercase tracking-wider font-semibold"
+                    >05 / CONTACT TERMINAL</span
+                  >
+                  <span class="h-px w-12 bg-surface-variant"></span>
+                </div>
+                <h2
+                  class="font-display-xl text-display-xl-mobile md:text-headline-lg lg:text-display-xl text-primary font-medium tracking-tighter leading-tight"
+                >
+                  Have a project in mind?
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed"
+                >
+                  Whether you need a custom web application, a high-converting
+                  Shopify store, or a complete digital overhaul, I'm available
+                  for select projects. Let's discuss your vision directly.
+                </p>
+                <!-- Direct Primary Action: WhatsApp CTA Button -->
+                <div
+                  class="pt-space-sm flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-space-md"
+                >
+                  <a
+                    class="inline-flex items-center justify-center gap-space-sm px-space-xl py-4 bg-primary text-on-primary font-body-md text-body-md font-medium rounded hover:bg-primary-fixed transition-colors shadow-sm group"
+                    href="https://wa.me/923083811132?text=Hi%20Moeez,%20I'd%20like%20to%20discuss%20a%20project"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[20px] text-on-primary"
+                      >chat</span
+                    >
+                    <span>Chat on WhatsApp</span>
+                    <span
+                      class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </a>
+                  <!-- Secondary Email Action with Fast Copy -->
+                  <button
+                    class="inline-flex items-center justify-center gap-space-xs px-space-lg py-4 bg-surface-container hover:bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded transition-colors"
+                    id="copy-email-btn"
+                    type="button"
+                    aria-label="Copy email address"
+                    title="Copy email address"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >content_copy</span
+                    >
+                    <span id="email-btn-label" aria-live="polite"
+                      >moeeznadeem58@gmail.com</span
+                    >
+                  </button>
+                </div>
+                <!-- Availability & Direct Channels -->
+                <div
+                  class="pt-space-lg grid grid-cols-1 sm:grid-cols-3 gap-space-md"
+                >
+                  <div class="space-y-1 min-w-0">
+                    <div
+                      class="font-label-caps text-label-caps text-outline uppercase tracking-wider"
+                    >
+                      PHONE
+                    </div>
+                    <a
+                      class="contact-link font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors block"
+                      href="tel:+923083811132"
+                      >+92 308 3811132</a
+                    >
+                  </div>
+                  <div class="space-y-1 min-w-0">
+                    <div
+                      class="font-label-caps text-label-caps text-outline uppercase tracking-wider"
+                    >
+                      INSTAGRAM
+                    </div>
+                    <a
+                      class="contact-link font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors block"
+                      href="https://www.instagram.com/moeez.codes/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      >@moeez.codes</a
+                    >
+                  </div>
+                  <div class="space-y-1 min-w-0">
+                    <div
+                      class="font-label-caps text-label-caps text-outline uppercase tracking-wider"
+                    >
+                      DIRECT EMAIL
+                    </div>
+                    <a
+                      class="contact-link font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors block"
+                      href="mailto:moeeznadeem58@gmail.com"
+                    >
+                      moeeznadeem58@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-lowest border-t border-outline-variant/30"
+    >
+      <div
+        class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin pt-space-2xl pb-space-xl"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl pb-space-2xl border-b border-outline-variant/20"
+        >
+          <div class="lg:col-span-6 space-y-space-md">
+            <div
+              class="font-display-xl-mobile lg:font-display-xl text-display-xl-mobile lg:text-display-xl text-primary font-bold tracking-tighter leading-none"
+            >
+              MOEEZ
+            </div>
+            <p
+              class="font-body-md text-body-md text-on-surface-variant max-w-md"
+            >
+              Full-Stack Developer · Sargodha, Pakistan. Crafting scalable
+              architectures and high-performance digital systems with deliberate
+              engineering rigor.
+            </p>
+            <div class="flex items-center gap-space-sm pt-space-xs">
+              <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span
+              ><span
+                class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider"
+                >PKT (UTC+5) · Available for selective projects</span
+              >
+            </div>
+          </div>
+          <div class="lg:col-span-3 space-y-space-sm">
+            <div
+              class="font-label-caps text-label-caps uppercase text-outline tracking-widest"
+            >
+              Navigation
+            </div>
+            <ul class="space-y-space-xs">
+              <li class="leading-none">
+                <a
+                  class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                  href="#about"
+                  >About Narrative</a
+                >
+              </li>
+              <li class="leading-none">
+                <a
+                  class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                  href="#services"
+                  >Core Capabilities</a
+                >
+              </li>
+              <li class="leading-none">
+                <a
+                  class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                  href="#stack"
+                  >Technical Stack</a
+                >
+              </li>
+              <li class="leading-none">
+                <a
+                  class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                  href="#selected-work"
+                  >Selected Artifacts</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3 space-y-space-sm">
+            <div
+              class="font-label-caps text-label-caps uppercase text-outline tracking-widest"
+            >
+              Contact
+            </div>
+            <ul class="space-y-space-xs">
+              <li class="leading-none">
+                <a
+                  class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                  href="mailto:moeeznadeem58@gmail.com"
+                  ><span class="min-w-0 break-all"
+                    >moeeznadeem58@gmail.com</span
+                  >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >arrow_outward</span
+                  ></a
+                >
+              </li>
+              <li class="leading-none">
+                <a
+                  class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                  href="https://www.instagram.com/moeez.codes/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >@moeez.codes
+                  <span class="material-symbols-outlined text-[14px]"
+                    >arrow_outward</span
+                  ></a
+                >
+              </li>
+              <li class="leading-none">
+                <a
+                  class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                  href="https://wa.me/923083811132"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >+92 308 3811132
+                  <span class="material-symbols-outlined text-[14px]"
+                    >arrow_outward</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="pt-space-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm"
+        >
+          <span class="font-code-sm text-code-sm text-outline"
+            >© 2025 Moeez. All rights reserved.</span
+          ><span
+            class="font-label-caps text-label-caps text-outline uppercase tracking-wider"
+            >Engineered with pure human craftsmanship</span
+          >
+        </div>
+      </div>
+    </footer>
+      </div>
+    </div>
+    <!-- Electric Orange Cursor Follower (PC Only) -->
+    <div
+      id="cursor-follower"
+      class="cursor-follower"
+      aria-hidden="true"
+    >
+      <svg
+        class="cursor-follower-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="17" y1="17" x2="7" y2="7"></line>
+        <polyline points="7 16 7 7 16 7"></polyline>
+      </svg>
+    </div>
+  </body>
+</html>
